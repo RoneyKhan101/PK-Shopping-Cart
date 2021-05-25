@@ -1,38 +1,257 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --lightblack: #2c2c2c;
+  --main: #ff6e68;
+}
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  background: var(--white);
+}
+
+.nav_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  justify-content: space-between;
+}
+
+.header {
+  background: url("./images/banner.webp");
+  width: 100%;
+  height: 100vh;
+}
+.nav_left img {
+  width: 100px;
+}
+a {
+  text-decoration: none;
+}
+
+.cart-icon {
+  color: var(--main);
+  font-size: 22px;
+}
+.details_incDec {
+  margin-left: 15px;
+}
+.line-through {
+  text-decoration: line-through;
+}
+
+.span-discount {
+  color: silver;
+  font-weight: 400;
+  font-size: 13px;
+}
+.basket {
+  height: 30%;
+}
+.details_image img {
+  width: 100%;
+  height: auto;
+}
+.details_name {
+  font-size: 35px;
+  margin-left: 15px;
+  text-transform: capitalize;
+}
+
+.details_actual {
+  margin-left: 15px;
+  text-decoration: line-through;
+  font-size: 20px;
+}
+.details_discount {
+  margin-left: 20px;
+  font-size: 20px;
+}
+/*Cart */
+
+.Cart {
+  margin-left: 5px;
+  margin-top: 100px;
+}
+.col-2{
+  width: 16%;
+}
+.col-9{
+  width: 100%;
+}
+.verticalAlign{
+  align-items: center;
+  margin-top: 10px;
+}
+.summary{
+  padding-left: 10px;
+}
+.summary_heading{
+  background: #b9c5d1;
+  padding: 10px;
+}
+.text-center{
+  text-align: center;
+}
+.cart_image img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.pad{
+  padding: 8px;
+}
+.pad2{
+  padding: 4px;
+  cursor: pointer;
+}
+/* End Cart */
+
+.cart_heading{
+  background: #f4f6f8;
+  padding:10px ;
+}
+.details_image {
+  width: 100%;
+  height: auto;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+
+.basket span {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: -10px;
+  top: -40px;
+  width: 25px;
+  height: 25px;
+  background: var(--lightblack);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 16px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-left: 15px;
+}
+.col-3 {
+  width: 25%;
+}
+.btn-default {
+  margin-left: 10px;
+
+  width: 100%;
+  background: var(--main);
+  color: var(--white);
+  outline: none;
+  font-size: 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.details_p {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+.details_p h4 {
+  font-size: 600;
+  margin-bottom: 10px;
+  font-size: 25px;
+  margin-top: 25px;
+}
+.dec {
+  cursor: pointer;
+}
+.inc {
+  cursor: pointer;
+}
+.mtb-30 {
+  margin: 30px auto;
+}
+.details_click {
+  display: flex;
+}
+.dec,
+.inc,
+.quantity {
+  width: 60px;
+  height: 60px;
+  border: 1px solid silver;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.product {
+  padding: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+.product_img {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+.product_img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s linear;
+}
+.product_img img:hover {
+  transform: scale(1.2);
+}
+.product_name {
+  margin: 10px 0;
+  text-transform: capitalize;
+  color: #707070;
+}
+.col-6 {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 765px) {
+  .container {
+    width: 100%;
+    padding: 0 30px;
   }
-  to {
-    transform: rotate(360deg);
+  .col-3 {
+    width: 50%;
+  }
+  .col-6 {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .col-3 {
+    width: 100%;
+  }
+  .col-6 {
+    width: 100%;
   }
 }
